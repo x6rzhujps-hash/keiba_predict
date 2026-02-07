@@ -2,6 +2,16 @@ import streamlit as st
 import lightgbm as lgb
 import pandas as pd
 from pathlib import Path
+import os
+
+PASSWORD = os.environ.get("APP_PASSWORD")
+
+pw = st.text_input("パスワードを入力", type="password")
+
+if pw != PASSWORD:
+    st.stop()
+
+st.success("ログイン成功")
 
 # =========================
 # あなたの既存関数を import
@@ -171,3 +181,4 @@ if st.button("予想する"):
             f"(3着内確率={row.pred_top3_prob})"
 
         )
+
