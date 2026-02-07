@@ -3,4 +3,5 @@ lightgbm
 pandas
 numpy
 requests
+lxml
 bs4
