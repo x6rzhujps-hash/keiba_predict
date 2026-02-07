@@ -1,0 +1,9 @@
+streamlit
+lightgbm
+pandas
+pathlib
+numpy
+requests
+bs4
+time
+io
