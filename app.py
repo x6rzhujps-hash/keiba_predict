@@ -23,13 +23,11 @@ from scraping_features import (
 # =========================
 @st.cache_resource
 def load_model_ability():
-    BASE_DIR = Path(__file__).resolve().parents[1]  # keiba_predict
-    MODEL_PATH = BASE_DIR / "models" / "lightgbm_v5" / "lgbm_ability_v1.txt"
+    MODEL_PATH = "models/lightgbm_v5/lgbm_ability_v1.txt"
     return lgb.Booster(model_file=str(MODEL_PATH))
 
 def load_model_pace():
-    BASE_DIR = Path(__file__).resolve().parents[1]  # keiba_predict
-    MODEL_PATH = BASE_DIR / "models" / "lightgbm_v5" / "lgbm_pace_v1.txt"
+    MODEL_PATH = "models/lightgbm_v5/lgbm_pace_v1.txt"
     return lgb.Booster(model_file=str(MODEL_PATH))
 
 model_ability = load_model_ability()
@@ -171,4 +169,5 @@ if st.button("予想する"):
             f"{int(row.horse_no)}番 "
             f"{row.horse_name} "
             f"(3着内確率={row.pred_top3_prob})"
+
         )
