@@ -33,11 +33,11 @@ from scraping_features import (
 # =========================
 @st.cache_resource
 def load_model_ability():
-    MODEL_PATH = "models/lightgbm_v5/lgbm_ability_v1.txt"
+    MODEL_PATH = "models/lightgbm_v5/lgbm_ability_v2.txt"
     return lgb.Booster(model_file=str(MODEL_PATH))
 
 def load_model_pace():
-    MODEL_PATH = "models/lightgbm_v5/lgbm_pace_v1.txt"
+    MODEL_PATH = "models/lightgbm_v5/lgbm_pace_v2.txt"
     return lgb.Booster(model_file=str(MODEL_PATH))
 
 model_ability = load_model_ability()
@@ -181,4 +181,5 @@ if st.button("予想する"):
             f"(3着内確率={row.pred_top3_prob})"
 
         )
+
 
