@@ -5,7 +5,7 @@ from pathlib import Path
 import os
 
 PASSWORD = os.environ.get("APP_PASSWORD")
-st.write("もう使えません")
+st.write("残念ながらもう使えませんよ")
 pw = st.text_input("パスワードを入力", type="password")
 
 if pw != PASSWORD:
@@ -181,6 +181,7 @@ if st.button("予想する"):
             f"(3着内確率={row.pred_top3_prob})"
 
         )
+
 
 
 
